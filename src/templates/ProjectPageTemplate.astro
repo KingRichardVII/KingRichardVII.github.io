@@ -1,0 +1,316 @@
+---
+/*
+===============================================================================
+                       PROJECT CASE STUDY TEMPLATE
+===============================================================================
+
+THIS FILE IS A TEMPLATE ONLY.
+
+Do NOT link directly to this file.
+
+When a project is ready for the portfolio:
+
+1. Copy this file.
+
+2. Paste the copy into:
+
+       src/pages/projects/
+
+3. Rename it using a clean URL-friendly name.
+
+   Example:
+
+       infrastructure-homelab.astro
+       active-directory.astro
+       splunk-detection-lab.astro
+
+4. Update the metadata below:
+
+       title
+       description
+       status
+       tags
+       heroImage
+       githubUrl
+       liveUrl
+
+5. Replace the placeholder sections with REAL project documentation.
+
+6. Add screenshots under:
+
+       public/projects/project-name/
+
+7. Update the project's `href` inside:
+
+       src/data/projects.ts
+
+Example:
+
+       href: "/projects/infrastructure-homelab"
+
+-------------------------------------------------------------------------------
+SCREENSHOT EXAMPLE
+-------------------------------------------------------------------------------
+
+File:
+
+    public/projects/homelab/proxmox-dashboard.webp
+
+Use in this page:
+
+    <img
+        src="/projects/homelab/proxmox-dashboard.webp"
+        alt="Proxmox VE dashboard showing the homelab virtualization host"
+    />
+
+Always use descriptive alt text.
+
+-------------------------------------------------------------------------------
+PROJECT PHILOSOPHY
+-------------------------------------------------------------------------------
+
+Do NOT make these pages giant dumps of commands.
+
+The goal is to show:
+
+    What problem did I solve?
+    What did I build?
+    How does it work?
+    What did I personally configure?
+    What went wrong?
+    How did I troubleshoot it?
+    What security considerations mattered?
+    What did I learn?
+
+Screenshots should provide EVIDENCE, not decoration.
+
+===============================================================================
+*/
+
+import ProjectLayout from "../layouts/ProjectLayout.astro";
+---
+
+<ProjectLayout
+    title="PROJECT TITLE"
+
+    description="One concise sentence explaining what the project is and why it matters."
+
+    status="COMPLETE"
+
+    tags={[
+        "Technology 1",
+        "Technology 2",
+        "Technology 3",
+    ]}
+
+    heroImage="/projects/project-name/thumbnail.webp"
+
+    githubUrl="https://github.com/KingRichardVII/REPOSITORY-NAME"
+
+    /*
+    Remove this property entirely if there is no live demo.
+    */
+    liveUrl="https://example.com"
+>
+
+
+    <!-- ===============================================================
+                                OVERVIEW
+    ================================================================ -->
+
+    <section>
+        <h2>Overview</h2>
+
+        <p>
+            Briefly explain what the project is, the environment it was built
+            in, and what you personally implemented.
+        </p>
+    </section>
+
+
+    <!-- ===============================================================
+                                OBJECTIVE
+    ================================================================ -->
+
+    <section>
+        <h2>Objective</h2>
+
+        <p>
+            Explain the problem or learning objective that motivated the
+            project.
+        </p>
+    </section>
+
+
+    <!-- ===============================================================
+                              ARCHITECTURE
+    ================================================================ -->
+
+    <section>
+        <h2>Architecture</h2>
+
+        <p>
+            Describe the major systems, networking, services, or application
+            components involved.
+        </p>
+
+        <!--
+        Example:
+
+        <img
+            src="/projects/project-name/architecture.webp"
+            alt="Architecture diagram showing..."
+        />
+        -->
+    </section>
+
+
+    <!-- ===============================================================
+                              TECHNOLOGIES
+    ================================================================ -->
+
+    <section>
+        <h2>Technologies</h2>
+
+        <ul class="list-disc ml-6 space-y-2">
+            <li>Technology / platform</li>
+            <li>Operating system</li>
+            <li>Networking / security tool</li>
+            <li>Automation / development technology</li>
+        </ul>
+    </section>
+
+
+    <!-- ===============================================================
+                             IMPLEMENTATION
+    ================================================================ -->
+
+    <section>
+        <h2>Implementation</h2>
+
+        <h3>Step / Phase 1</h3>
+
+        <p>
+            Explain what you configured and why.
+        </p>
+
+        <h3>Step / Phase 2</h3>
+
+        <p>
+            Continue with the meaningful implementation details.
+        </p>
+
+        <!--
+        Example screenshot:
+
+        <img
+            src="/projects/project-name/configuration.webp"
+            alt="Configuration showing..."
+        />
+        -->
+    </section>
+
+
+    <!-- ===============================================================
+                         SCREENSHOTS / EVIDENCE
+    ================================================================ -->
+
+    <section>
+        <h2>Screenshots & Evidence</h2>
+
+        <p>
+            Show the strongest evidence that the project actually works.
+        </p>
+
+        <!--
+        Good examples:
+
+        - dashboard
+        - successful SSH session
+        - firewall rules
+        - logs
+        - vulnerability scan results
+        - SIEM detection
+        - AD users / groups / policies
+        - application UI
+        - architecture diagram
+
+        Do NOT include screenshots just to make the page longer.
+        -->
+    </section>
+
+
+    <!-- ===============================================================
+                    CHALLENGES & TROUBLESHOOTING
+    ================================================================ -->
+
+    <section>
+        <h2>Challenges & Troubleshooting</h2>
+
+        <p>
+            Describe a real problem encountered during the project.
+        </p>
+
+        <p>
+            Explain how you isolated the cause, what you tested, and how you
+            resolved it.
+        </p>
+    </section>
+
+
+    <!-- ===============================================================
+                        SECURITY CONSIDERATIONS
+    ================================================================ -->
+
+    <section>
+        <h2>Security Considerations</h2>
+
+        <p>
+            Explain relevant security decisions such as access control,
+            segmentation, firewalling, authentication, patching, logging,
+            least privilege, credential handling, or attack surface reduction.
+        </p>
+    </section>
+
+
+    <!-- ===============================================================
+                           LESSONS LEARNED
+    ================================================================ -->
+
+    <section>
+        <h2>Lessons Learned</h2>
+
+        <p>
+            Explain what you now understand better because you completed this
+            work.
+        </p>
+    </section>
+
+
+    <!-- ===============================================================
+                         FUTURE IMPROVEMENTS
+    ================================================================ -->
+
+    <section>
+        <h2>Future Improvements</h2>
+
+        <ul class="list-disc ml-6 space-y-2">
+            <li>Improvement or next milestone</li>
+            <li>Additional security control</li>
+            <li>Automation opportunity</li>
+        </ul>
+    </section>
+
+</ProjectLayout>
+
+/*
+IMPORTANT:
+
+While this template lives in src/templates/, use:
+
+    ../layouts/ProjectLayout.astro
+
+After copying this file into src/pages/projects/, CHANGE IT TO:
+
+    ../../layouts/ProjectLayout.astro
+*/
