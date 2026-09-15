@@ -1,0 +1,384 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimeLineElement from "../components/cv/TimeLine.astro";
+---
+
+<BaseLayout
+  title="Resume | Richard Phan"
+  sideBarActiveItemID="resume"
+>
+  <!--
+  ===============================================================================
+                            RESUME PDF MAINTENANCE
+  ===============================================================================
+
+  Full PDF update instructions:
+
+      public/resume/README.md
+
+  Expected downloadable resume:
+
+      public/resume/Richard_Phan_Resume.pdf
+
+  Public URL:
+
+      /resume/Richard_Phan_Resume.pdf
+
+  Once the PDF has been added, a "View PDF Resume" button can be enabled
+  near the top of this page.
+
+  Keep the PDF filename the same when replacing it so website code does
+  not need to be changed.
+
+  ===============================================================================
+  -->
+
+
+  <!-- ===============================================================
+                              INTRO
+  ================================================================ -->
+
+  <section class="mb-12">
+    <h1 class="text-4xl font-bold">
+      Resume
+    </h1>
+
+    <p class="text-xl mt-3 font-semibold opacity-90">
+      Enterprise IT • Cybersecurity • Infrastructure
+    </p>
+
+    <p class="text-lg mt-5 max-w-3xl opacity-80 leading-relaxed">
+      Computer Science senior at California State University, Northridge
+      with hands-on enterprise IT experience across identity and access
+      management, endpoint operations, security incident triage, and
+      technical support. Currently building deeper Linux, networking,
+      virtualization, and defensive security skills toward a career in
+      infrastructure and security engineering.
+    </p>
+  </section>
+
+
+  <!-- ===============================================================
+                              EXPERIENCE
+  ================================================================ -->
+
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">
+      Experience
+    </h2>
+
+    <div
+      class="
+        border
+        border-base-300
+        bg-base-200/20
+        rounded-2xl
+        p-6
+      "
+    >
+      <div class="time-line-container">
+        <TimeLineElement
+          title="IT Help Desk Technician"
+          subtitle="Feb 2026 – Present • California State University, Northridge"
+        >
+          <ul class="list-disc ml-5 mt-3 space-y-2 opacity-85">
+            <li>
+              Resolve 20–30 Tier 1–2 tickets daily involving authentication,
+              authorization, MFA, provisioning, and account access using
+              Oracle Identity Manager, Active Directory, Duo Admin, and
+              Google Workspace in a 38,000+ user environment.
+            </li>
+
+            <li>
+              Triaged 25+ suspected phishing, account-compromise, IOC, and
+              unauthorized-authentication cases by reviewing Duo authentication
+              activity, verifying identities, remediating account access,
+              documenting findings, and escalating to Information Security.
+            </li>
+
+            <li>
+              Deployed and imaged 400+ Windows 11 endpoints during CSUN's
+              SCCM-to-Microsoft Intune migration, reducing imaging time by 60%.
+            </li>
+
+            <li>
+              Developed a Python automation tool that reduced end-of-day
+              reporting time by approximately 15 minutes per day.
+            </li>
+          </ul>
+        </TimeLineElement>
+
+
+        <TimeLineElement
+          title="Cyber Defense Analyst - Linux (CCDC)"
+          subtitle="Sep 2026 – Present • CSUN Layer 8 Computer Security"
+        >
+          <p class="mt-3 opacity-85 leading-relaxed">
+            Transitioned to the Linux team to deepen system administration and
+            defensive security skills. Training focuses on Linux server
+            administration, service hardening, permissions, logging, networking,
+            troubleshooting, and incident response in CCDC environments.
+          </p>
+        </TimeLineElement>
+
+
+        <TimeLineElement
+          title="Cyber Defense Trainee (CCDC)"
+          subtitle="Jun 2026 – Aug 2026 • CSUN Layer 8 Computer Security"
+        >
+          <p class="mt-3 opacity-85 leading-relaxed">
+            Participated in introductory CCDC training covering networking,
+            cybersecurity, and Windows administration, completing a hands-on
+            Active Directory project as part of the Windows team.
+          </p>
+        </TimeLineElement>
+
+
+        <TimeLineElement
+          title="Computer Lab & Technology Support"
+          subtitle="Feb 2023 – Jun 2025 • Los Angeles Pierce College"
+        >
+          <p class="mt-3 opacity-85 leading-relaxed">
+            Provided technology support to 200+ users in a 30-workstation
+            tutoring computer lab, assisting with account access, password
+            resets, Canvas, Microsoft 365, connectivity, and basic workstation
+            issues.
+          </p>
+        </TimeLineElement>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===============================================================
+                              EDUCATION
+  ================================================================ -->
+
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-5">
+      Education
+    </h2>
+
+    <div
+      class="
+        border
+        border-base-300
+        bg-base-200/20
+        rounded-2xl
+        p-6
+        transition-all
+        duration-200
+        hover:bg-base-200/40
+        hover:shadow-lg
+      "
+    >
+      <h3 class="text-xl font-bold">
+        Bachelor of Science in Computer Science
+      </h3>
+
+      <p class="mt-2 opacity-75">
+        California State University, Northridge
+      </p>
+
+      <p class="mt-1 opacity-65">
+        Expected May 2027
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ===============================================================
+                        CERTIFICATIONS & AWARDS
+  ================================================================ -->
+
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-5">
+      Certifications & Awards
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-4">
+
+      <div
+        class="
+          border
+          border-base-300
+          bg-base-200/20
+          rounded-2xl
+          p-5
+          transition-all
+          duration-200
+          hover:-translate-y-1
+          hover:bg-base-200/40
+          hover:shadow-lg
+        "
+      >
+        <h3 class="font-bold text-lg">
+          CompTIA Security+
+        </h3>
+
+        <p class="mt-2 text-sm opacity-70">
+          SY0-701
+        </p>
+      </div>
+
+
+      <div
+        class="
+          border
+          border-base-300
+          bg-base-200/20
+          rounded-2xl
+          p-5
+          transition-all
+          duration-200
+          hover:-translate-y-1
+          hover:bg-base-200/40
+          hover:shadow-lg
+        "
+      >
+        <h3 class="font-bold text-lg">
+          1st Place
+        </h3>
+
+        <p class="mt-2 text-sm opacity-70">
+          Miro x Kiro AWS LA Hackathon
+        </p>
+      </div>
+
+
+      <div
+        class="
+          border
+          border-base-300
+          bg-base-200/20
+          rounded-2xl
+          p-5
+          transition-all
+          duration-200
+          hover:-translate-y-1
+          hover:bg-base-200/40
+          hover:shadow-lg
+        "
+      >
+        <h3 class="font-bold text-lg">
+          2nd Place
+        </h3>
+
+        <p class="mt-2 text-sm opacity-70">
+          CSUN AI Jam 2026
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===============================================================
+                          TECHNICAL SKILLS
+  ================================================================ -->
+
+  <section>
+    <h2 class="text-3xl font-bold mb-5">
+      Technical Skills
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-5">
+
+      <div
+        class="
+          border
+          border-base-300
+          bg-base-200/20
+          rounded-2xl
+          p-5
+          transition-all
+          duration-200
+          hover:bg-base-200/40
+          hover:shadow-lg
+        "
+      >
+        <h3 class="text-lg font-bold">
+          Security & IAM
+        </h3>
+
+        <p class="mt-3 opacity-75 leading-relaxed">
+          Phishing Triage, IOC Documentation, Account Compromise Response,
+          MFA, OAuth, RBAC, Active Directory, Oracle Identity Manager,
+          Duo Admin
+        </p>
+      </div>
+
+
+      <div
+        class="
+          border
+          border-base-300
+          bg-base-200/20
+          rounded-2xl
+          p-5
+          transition-all
+          duration-200
+          hover:bg-base-200/40
+          hover:shadow-lg
+        "
+      >
+        <h3 class="text-lg font-bold">
+          Systems & Networking
+        </h3>
+
+        <p class="mt-3 opacity-75 leading-relaxed">
+          Windows 10/11, Linux (Debian/Ubuntu), Proxmox VE, TCP/IP,
+          DNS, DHCP, SSH, UFW, iptables, GlobalProtect VPN
+        </p>
+      </div>
+
+
+      <div
+        class="
+          border
+          border-base-300
+          bg-base-200/20
+          rounded-2xl
+          p-5
+          transition-all
+          duration-200
+          hover:bg-base-200/40
+          hover:shadow-lg
+        "
+      >
+        <h3 class="text-lg font-bold">
+          Enterprise & Endpoint
+        </h3>
+
+        <p class="mt-3 opacity-75 leading-relaxed">
+          Microsoft Intune, Apple School Manager, Microsoft 365,
+          TOPdesk, BeyondTrust Remote Support
+        </p>
+      </div>
+
+
+      <div
+        class="
+          border
+          border-base-300
+          bg-base-200/20
+          rounded-2xl
+          p-5
+          transition-all
+          duration-200
+          hover:bg-base-200/40
+          hover:shadow-lg
+        "
+      >
+        <h3 class="text-lg font-bold">
+          Automation & Development
+        </h3>
+
+        <p class="mt-3 opacity-75 leading-relaxed">
+          Python, Git, GitHub, TypeScript, REST APIs, PostgreSQL
+        </p>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>

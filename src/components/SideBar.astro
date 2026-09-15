@@ -1,0 +1,122 @@
+---
+import SideBarFooter from "./SideBarFooter.astro";
+import { Image } from "astro:assets";
+import SideBarMenu from "./SideBarMenu.astro";
+
+const { sideBarActiveItemID } = Astro.props;
+---
+
+<!--
+===============================================================================
+                         PROFILE PICTURE GUIDE
+===============================================================================
+
+The profile picture displayed in the sidebar comes from:
+
+    public/profile.webp
+
+HOW TO REPLACE IT:
+
+1. Choose a professional headshot or clean personal photo.
+
+2. Crop it approximately square.
+
+   Recommended:
+       1:1 aspect ratio
+       at least 600 x 600 pixels
+
+3. Convert/save the image as:
+
+       profile.webp
+
+4. Replace the existing file:
+
+       public/profile.webp
+
+5. KEEP THE SAME FILENAME.
+
+If the filename remains:
+
+    profile.webp
+
+NO CODE CHANGES ARE REQUIRED.
+
+The site automatically crops the image into a circle.
+
+Good profile photo guidelines:
+    - clear face
+    - good lighting
+    - simple background
+    - head/shoulders visible
+    - professional or smart-casual appearance
+
+Avoid:
+    - low-resolution images
+    - screenshots
+    - heavy filters
+    - distant full-body photos
+
+===============================================================================
+-->
+
+<div class="drawer-side z-40">
+    <label for="my-drawer" class="drawer-overlay"></label>
+
+    <aside
+        class="px-2 pt-2 h-auto min-h-full w-[19rem] bg-base-200 text-base-content flex flex-col"
+    >
+        <!-- ===============================================================
+                             PROFILE SECTION
+        ================================================================ -->
+
+        <div class="w-fit mx-auto mt-5 mb-5 text-center">
+            <a href="/">
+                <div
+                    class="avatar transition-all duration-200 ease-out hover:scale-[1.03] block m-auto"
+                >
+                    <div class="w-[8.5rem] rounded-full overflow-hidden">
+                        <Image
+                            class="w-full h-full object-cover"
+                            format="webp"
+                            width={300}
+                            height={300}
+                            src="/profile.webp"
+                            alt="Richard Phan"
+                        />
+                    </div>
+                </div>
+            </a>
+
+            <div class="mt-4">
+                <a
+                    href="/"
+                    class="text-2xl font-bold"
+                >
+                    Richard Phan
+                </a>
+
+                <p class="mt-1 text-sm opacity-70">
+                    IT Help Desk Technician @ CSUN
+                </p>
+
+                <p class="text-sm opacity-70">
+                    CompTIA Security+
+                </p>
+            </div>
+        </div>
+
+
+        <!-- ===============================================================
+                              NAVIGATION
+        ================================================================ -->
+
+        <SideBarMenu sideBarActiveItemID={sideBarActiveItemID} />
+
+
+        <!-- ===============================================================
+                          GITHUB / LINKEDIN ICONS
+        ================================================================ -->
+
+        <SideBarFooter />
+    </aside>
+</div>

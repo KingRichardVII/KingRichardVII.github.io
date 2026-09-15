@@ -1,0 +1,183 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { projects } from "../data/projects";
+
+/*
+===============================================================================
+                         HOMEPAGE MAINTENANCE
+===============================================================================
+
+The homepage shows the FIRST 3 projects from:
+
+    src/data/projects.ts
+
+To change which projects appear here:
+
+    1. Open:
+           src/data/projects.ts
+
+    2. Reorder the projects array.
+
+    3. The first 3 projects automatically appear under "Featured Projects".
+
+Project titles, descriptions, images, tags, status, and links are NOT
+maintained in this file.
+
+This keeps project information in ONE place.
+
+===============================================================================
+*/
+
+const featuredProjects = projects.slice(0, 3);
+---
+
+<BaseLayout sideBarActiveItemID="home">
+
+  <!-- ===============================================================
+                               HERO
+  ================================================================ -->
+
+  <section class="pb-12 mt-5">
+    <p class="text-xl opacity-80">
+      Hi, I'm
+    </p>
+
+    <h1 class="text-5xl md:text-6xl font-bold mt-1">
+      Richard Phan
+    </h1>
+
+    <h2 class="text-2xl md:text-3xl mt-4 font-bold">
+      IT • Cybersecurity • Infrastructure
+    </h2>
+
+    <p
+      class="
+        text-lg
+        mt-6
+        max-w-2xl
+        opacity-80
+        leading-relaxed
+      "
+    >
+      Computer Science senior at California State University, Northridge
+      working in enterprise IT and building hands-on experience in Linux,
+      networking, virtualization, identity, and defensive security.
+    </p>
+
+    <div class="mt-8 flex flex-wrap gap-3">
+
+      <a
+        class="
+          btn
+          btn-primary
+          rounded-xl
+          transition-all
+          duration-200
+          hover:-translate-y-1
+          hover:shadow-lg
+        "
+        href="/projects"
+      >
+        View Projects
+      </a>
+
+      <a
+        class="
+          btn
+          btn-outline
+          rounded-xl
+          transition-all
+          duration-200
+          hover:-translate-y-1
+          hover:shadow-lg
+        "
+        href="/resume"
+      >
+        View Resume
+      </a>
+
+      <a
+        class="
+          btn
+          btn-ghost
+          rounded-xl
+          transition-all
+          duration-200
+          hover:-translate-y-1
+        "
+        href="/contact"
+      >
+        Contact
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- ===============================================================
+                          FEATURED PROJECTS
+  ================================================================ -->
+
+  <section class="mt-6">
+
+    <div
+      class="
+        flex
+        flex-wrap
+        items-end
+        justify-between
+        gap-4
+        mb-6
+      "
+    >
+      <div>
+        <h2 class="text-3xl font-bold">
+          Featured Projects
+        </h2>
+
+        <p class="mt-2 opacity-70">
+          Hands-on work in infrastructure, systems, security, and software.
+        </p>
+      </div>
+
+      <a
+        href="/projects"
+        class="
+          font-semibold
+          opacity-80
+          transition-all
+          duration-200
+          hover:opacity-100
+          hover:translate-x-1
+        "
+      >
+        View All →
+      </a>
+    </div>
+
+
+    {
+      featuredProjects.map((project, index) => (
+        <>
+          <ProjectCard
+            title={project.title}
+            description={project.description}
+            image={project.image}
+            href={project.href}
+            status={project.status}
+            tags={project.tags}
+          />
+
+          {
+            index < featuredProjects.length - 1 && (
+              <div class="divider my-3"></div>
+            )
+          }
+        </>
+      ))
+    }
+
+  </section>
+
+</BaseLayout>

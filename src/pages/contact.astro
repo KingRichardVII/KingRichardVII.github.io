@@ -1,0 +1,181 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Contact | Richard Phan"
+  sideBarActiveItemID="contact"
+>
+  <!--
+  ===============================================================================
+                            CONTACT INFO MAINTENANCE
+  ===============================================================================
+
+  To update contact information later, edit the links below.
+
+  Current destinations:
+
+      Email:
+          mailto:richard.phan626@gmail.com
+
+      LinkedIn:
+          https://www.linkedin.com/in/king-richard-phan
+
+      GitHub:
+          https://github.com/KingRichardVII
+
+  IMPORTANT:
+      Keep the visible labels simple.
+      Do not display long/raw URLs unless there is a good reason.
+
+  ===============================================================================
+  -->
+
+  <section class="mb-10">
+    <h1 class="text-4xl font-bold">
+      Contact
+    </h1>
+
+    <p class="text-lg mt-3 max-w-2xl opacity-80">
+      I'm always open to connecting about cybersecurity, infrastructure,
+      IT, and early-career opportunities.
+    </p>
+  </section>
+
+
+  <section class="grid gap-5 max-w-2xl">
+
+    <!-- Email -->
+    <a
+      href="mailto:richard.phan626@gmail.com"
+      class="
+        group
+        border
+        border-base-300
+        bg-base-200/30
+        rounded-2xl
+        p-6
+        transition-all
+        duration-200
+        ease-out
+        hover:-translate-y-1
+        hover:bg-base-200/60
+        hover:shadow-xl
+      "
+    >
+      <div class="flex items-center justify-between gap-4">
+        <div>
+          <h2 class="text-xl font-bold">
+            Email
+          </h2>
+
+          <p class="mt-2 opacity-70">
+            Get in touch directly
+          </p>
+        </div>
+
+        <span
+          class="
+            text-xl
+            transition-transform
+            duration-200
+            group-hover:translate-x-1
+          "
+        >
+          →
+        </span>
+      </div>
+    </a>
+
+
+    <!-- LinkedIn -->
+    <a
+      href="https://www.linkedin.com/in/king-richard-phan"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="
+        group
+        border
+        border-base-300
+        bg-base-200/30
+        rounded-2xl
+        p-6
+        transition-all
+        duration-200
+        ease-out
+        hover:-translate-y-1
+        hover:bg-base-200/60
+        hover:shadow-xl
+      "
+    >
+      <div class="flex items-center justify-between gap-4">
+        <div>
+          <h2 class="text-xl font-bold">
+            LinkedIn
+          </h2>
+
+          <p class="mt-2 opacity-70">
+            Connect with me professionally
+          </p>
+        </div>
+
+        <span
+          class="
+            text-xl
+            transition-transform
+            duration-200
+            group-hover:translate-x-1
+          "
+        >
+          ↗
+        </span>
+      </div>
+    </a>
+
+
+    <!-- GitHub -->
+    <a
+      href="https://github.com/KingRichardVII"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="
+        group
+        border
+        border-base-300
+        bg-base-200/30
+        rounded-2xl
+        p-6
+        transition-all
+        duration-200
+        ease-out
+        hover:-translate-y-1
+        hover:bg-base-200/60
+        hover:shadow-xl
+      "
+    >
+      <div class="flex items-center justify-between gap-4">
+        <div>
+          <h2 class="text-xl font-bold">
+            GitHub
+          </h2>
+
+          <p class="mt-2 opacity-70">
+            View my projects and technical work
+          </p>
+        </div>
+
+        <span
+          class="
+            text-xl
+            transition-transform
+            duration-200
+            group-hover:translate-x-1
+          "
+        >
+          ↗
+        </span>
+      </div>
+    </a>
+
+  </section>
+</BaseLayout>

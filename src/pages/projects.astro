@@ -1,0 +1,73 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { projects } from "../data/projects";
+---
+
+<BaseLayout
+  title="Projects | Richard Phan"
+  sideBarActiveItemID="projects"
+>
+  <!--
+  ===============================================================================
+                              PROJECTS PAGE
+  ===============================================================================
+
+  This page ONLY controls the overall Projects page layout.
+
+  To add, remove, reorder, rename, or update projects:
+
+      EDIT:
+          src/data/projects.ts
+
+  To change how project cards look:
+
+      EDIT:
+          src/components/ProjectCard.astro
+
+  To add project screenshots/thumbnails:
+
+      ADD FILES UNDER:
+          public/projects/
+
+  Example:
+      public/projects/homelab/thumbnail.webp
+
+  Do NOT manually copy/paste project cards into this file.
+
+  ===============================================================================
+  -->
+
+  <section class="mb-10">
+    <h1 class="text-4xl font-bold">
+      Projects
+    </h1>
+
+    <p class="text-lg mt-3 opacity-80">
+      Hands-on work in infrastructure, Linux, networking, security, and software development.
+    </p>
+  </section>
+
+  <section>
+    {
+      projects.map((project, index) => (
+        <>
+          <ProjectCard
+            title={project.title}
+            description={project.description}
+            image={project.image}
+            href={project.href}
+            status={project.status}
+            tags={project.tags}
+          />
+
+          {
+            index < projects.length - 1 && (
+              <div class="divider my-3"></div>
+            )
+          }
+        </>
+      ))
+    }
+  </section>
+</BaseLayout>

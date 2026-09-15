@@ -1,0 +1,264 @@
+---
+/*
+===============================================================================
+                         PROJECT CARD COMPONENT
+===============================================================================
+
+This file controls HOW all project cards look.
+
+DO NOT copy/paste this component to add projects.
+
+To add, remove, reorder, or update projects:
+    src/data/projects.ts
+
+Project images:
+    public/projects/
+
+Example:
+    public/projects/homelab/thumbnail.webp
+
+PROJECT BEHAVIOR:
+
+- Every card reacts visually when hovered.
+- Projects with an `href` are clickable.
+- Projects without an `href` still have hover feedback, but do NOT create
+  fake/dead links.
+- Once a case-study page exists, add its href in:
+      src/data/projects.ts
+
+===============================================================================
+*/
+
+interface Props {
+    title: string;
+    description: string;
+    image?: string;
+    href?: string;
+    status?: string;
+    tags?: string[];
+}
+
+const {
+    title,
+    description,
+    image,
+    href,
+    status,
+    tags = [],
+} = Astro.props;
+
+const cardClasses = `
+    group
+    grid
+    md:grid-cols-[240px_1fr]
+    gap-6
+    items-center
+    p-4
+    rounded-2xl
+    border
+    border-transparent
+    transition-all
+    duration-200
+    ease-out
+    hover:-translate-y-1
+    hover:bg-base-200/60
+    hover:border-base-300
+    hover:shadow-xl
+`;
+
+const clickableClasses = href
+    ? "cursor-pointer"
+    : "cursor-default";
+---
+
+{
+    href ? (
+        <a
+            href={href}
+            class="block rounded-2xl"
+            aria-label={`View ${title} project`}
+        >
+            <article class={`${cardClasses} ${clickableClasses}`}>
+
+                <!-- Project thumbnail -->
+                <div
+                    class="
+                        w-full
+                        aspect-[16/10]
+                        rounded-2xl
+                        overflow-hidden
+                        border
+                        border-base-300
+                        bg-base-200
+                        transition-transform
+                        duration-200
+                        group-hover:scale-[1.02]
+                    "
+                >
+                    {
+                        image ? (
+                            <img
+                                src={image}
+                                alt={`${title} project preview`}
+                                class="w-full h-full object-cover"
+                                loading="lazy"
+                            />
+                        ) : (
+                            <div
+                                class="
+                                    w-full
+                                    h-full
+                                    flex
+                                    items-center
+                                    justify-center
+                                    text-center
+                                    p-6
+                                    opacity-50
+                                "
+                            >
+                                Project image coming soon
+                            </div>
+                        )
+                    }
+                </div>
+
+                <!-- Project summary -->
+                <div>
+                    <div class="flex flex-wrap items-center gap-3">
+                        <h2
+                            class="
+                                text-2xl
+                                font-bold
+                                transition-all
+                                duration-200
+                                group-hover:underline
+                            "
+                        >
+                            {title}
+                        </h2>
+
+                        {
+                            status && (
+                                <span class="badge badge-primary rounded-full">
+                                    {status}
+                                </span>
+                            )
+                        }
+                    </div>
+
+                    <p class="mt-3 text-lg opacity-80">
+                        {description}
+                    </p>
+
+                    {
+                        tags.length > 0 && (
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                {tags.map((tag) => (
+                                    <span
+                                        class="badge badge-outline rounded-full"
+                                    >
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+                        )
+                    }
+
+                    <div
+                        class="
+                            mt-4
+                            font-semibold
+                            transition-transform
+                            duration-200
+                            group-hover:translate-x-1
+                        "
+                    >
+                        View Project →
+                    </div>
+                </div>
+
+            </article>
+        </a>
+    ) : (
+        <article class={`${cardClasses} ${clickableClasses}`}>
+
+            <!-- Project thumbnail -->
+            <div
+                class="
+                    w-full
+                    aspect-[16/10]
+                    rounded-2xl
+                    overflow-hidden
+                    border
+                    border-base-300
+                    bg-base-200
+                    transition-transform
+                    duration-200
+                    group-hover:scale-[1.02]
+                "
+            >
+                {
+                    image ? (
+                        <img
+                            src={image}
+                            alt={`${title} project preview`}
+                            class="w-full h-full object-cover"
+                            loading="lazy"
+                        />
+                    ) : (
+                        <div
+                            class="
+                                w-full
+                                h-full
+                                flex
+                                items-center
+                                justify-center
+                                text-center
+                                p-6
+                                opacity-50
+                            "
+                        >
+                            Project image coming soon
+                        </div>
+                    )
+                }
+            </div>
+
+            <!-- Project summary -->
+            <div>
+                <div class="flex flex-wrap items-center gap-3">
+                    <h2 class="text-2xl font-bold">
+                        {title}
+                    </h2>
+
+                    {
+                        status && (
+                            <span class="badge badge-primary rounded-full">
+                                {status}
+                            </span>
+                        )
+                    }
+                </div>
+
+                <p class="mt-3 text-lg opacity-80">
+                    {description}
+                </p>
+
+                {
+                    tags.length > 0 && (
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            {tags.map((tag) => (
+                                <span
+                                    class="badge badge-outline rounded-full"
+                                >
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                    )
+                }
+            </div>
+
+        </article>
+    )
+}
