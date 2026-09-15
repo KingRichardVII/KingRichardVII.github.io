@@ -10,3 +10,22 @@ Future custom domain:
 
 ```text
 richardphan.com
+
+
+## To Push Code:
+### 
+DESKTOP
+git pull
+↓
+work
+↓
+git add -A
+git commit
+git push
+↓
+GitHub
+
+LAPTOP
+git pull
+↓
+continue working
